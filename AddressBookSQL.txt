@@ -238,3 +238,11 @@ mysql> select * from addressbook;
 | Shristi   | Gupta    | B6 Navlakha         | Indore        | MP         | 409020 | +916565644332 | sris@gmail.com         | NULL | Personal     |
 | Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91545544332  | strivi@gmail.com       | NULL | Family       |
 +-----------+----------+---------------------+---------------+------------+--------+---------------+------------------------+------+--------------+
+
+# 10 number of contacts  (count by type)
+mysql> select count(type) from addressbook;
++-------------+
+| count(type) |
++-------------+
+|           7 |
++-------------+
