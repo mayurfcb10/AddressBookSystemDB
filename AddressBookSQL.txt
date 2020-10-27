@@ -73,7 +73,7 @@ mysql> insert into addressbook (firstname, lastname, address, city, state, zip,p
 
 mysql> select * from addressbook;
 +-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
-| firstname | lastname | address             | city          | state      | zip   | phonenumber  | email                |
+| firstname | lastname | address             | city          | state      | zip    | phonenumber  | email                |
 +-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
 | Bill      | Gates    | Bo-4 Medina         | Seattle       | Washington | 204020 | +1989849489  | bill@outlook.com     |
 | Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +17958694534 | markz@rediffmail.com |
@@ -86,9 +86,22 @@ mysql> update addressbook set phonenumber = '+13462363262' where firstname = 'Ma
 
 mysql> select * from addressbook;
 +-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
-| firstname | lastname | address             | city          | state      | zip | phonenumber  | email                |
+| firstname | lastname | address             | city          | state      | zip	   | phonenumber  | email                |
 +-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
 | Bill      | Gates    | Bo-4 Medina         | Seattle       | Washington | 204020 | +1989849489  | bill@outlook.com     |
+| Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262 | markz@rediffmail.com |
+| Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91545544332 | strivi@gmail.com     |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+
+
+# UC5 Delete addressbook Contact Details
+
+mysql> delete from addressbook where firstname = 'Bill' and lastname = 'Gates';
+
+mysql> select * from addressbook;
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| firstname | lastname | address             | city          | state      | zip    | phonenumber  | email                |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
 | Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262 | markz@rediffmail.com |
 | Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91545544332 | strivi@gmail.com     |
 +-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
