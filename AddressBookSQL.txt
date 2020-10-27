@@ -62,3 +62,20 @@ mysql> desc addressbook;
 | phonenumber | varchar(15)  | NO   |     | NULL    |       |
 | email       | varchar(30)  | NO   |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
+
+#UC3 Insert the data in the addressbook
+
+mysql> insert into addressbook (firstname, lastname, address, city, state, zip,phonenumber, email) values
+    -> ('Mark', 'Zuck', 'F-91 Silicon Valley','San Francisco', 'California','204030','+17958694534','markz@rediffmail.com'),
+    -> ('Bill', 'Gates', 'Bo-4 Medina','Seattle', 'Washington','204020','+1989849489','bill@outlook.com'),
+    -> ('Strivi', 'Ahuja', 'A-4 Silicon City','Bhopal', 'MP','404020','+91545544332','strivi@gmail.com');
+
+
+mysql> select * from addressbook;
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| firstname | lastname | address             | city          | state      | zip   | phonenumber  | email                |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| Bill      | Gates    | Bo-4 Medina         | Seattle       | Washington | 204020 | +1989849489  | bill@outlook.com     |
+| Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +17958694534 | markz@rediffmail.com |
+| Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91645544332 | strivi@gmail.com     |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
