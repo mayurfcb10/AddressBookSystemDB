@@ -139,3 +139,42 @@ mysql> select * from addressbook where  state = 'MP';
 | Strivi    | Ahuja    | A-4 Silicon City | Bhopal | MP    | 404020 | +915455443
 32 | strivi@gmail.com |
 +-----------+----------+------------------+--------+-------+--------+--------------+------------------+
+
+# Inserted data to get good idea of count
+
+mysql> insert into addressbook values
+    -> ('Shristi', 'Gupta', 'B6 Navlakha','Indore', 'MP','409020','+916565644332','sris@gmail.com'),
+    -> ('Mark', 'King', 'F-88 Silicon Valley','Tolouse', 'California','204056','+143434345655','markz@rediff.com');
+
+
+mysql> select * from addressbook;
++-----------+----------+---------------------+---------------+------------+--------+---------------+----------------------+
+| firstname | lastname | address             | city          | state      | zip | phonenumber   | email                |
++-----------+----------+---------------------+---------------+------------+--------+---------------+----------------------+
+| Mark      | King     | F-88 Silicon Valley | Tolouse       | California | 204056 | +143434345655 | markz@rediff.com     |
+| Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262  | markz@rediffmail.com |
+| Shristi   | Gupta    | B6 Navlakha         | Indore        | MP         | 409020 | +916565644332 | sris@gmail.com       |
+| Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91545544332  | strivi@gmail.com     |
++-----------+----------+---------------------+---------------+------------+--------+---------------+----------------------+
+
+
+# UC7 Size of the addressbook by ciy and state
+
+mysql> select state,count(state) from addressbook group by state;
++------------+--------------+
+| state      | count(state) |
++------------+--------------+
+| California |            2 |
+| MP         |            2 |
++------------+--------------+
+
+
+mysql> select city,count(city) from addressbook group by city;
++---------------+-------------+
+| city          | count(city) |
++---------------+-------------+
+| Tolouse       |           1 |
+| San Francisco |           1 |
+| Indore        |           1 |
+| Bhopal        |           1 |
++---------------+-------------+
