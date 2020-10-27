@@ -1,1 +1,33 @@
 # Welcome to the AddressBookSystemDB Problem 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| sakila             |
+| sample             |
+| sys                |
+| world              |
++--------------------+
+
+mysql> create database AddressBookSystemDB
+
+mysql> show databases;
+
++---------------------+
+| Database            |
++---------------------+
+| addressbooksystemdb |
+| information_schema  |
+| mysql               |
+| payroll_service     |
+| performance_schema  |
+| sakila              |
+| sample              |
+| sys                 |
+| world               |
++---------------------+
