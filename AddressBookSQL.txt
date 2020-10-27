@@ -212,3 +212,29 @@ mysql> select * from addressbook where city = 'Indore' order by firstname asc;
 | Rohan     | Bajaj    |  PITH         | Indore | MP    | 450000 | +91347348734 | moneykicks@gmail.com |
 | Shristi   | Gupta    | B6 Navlakha   | Indore | MP    | 409020 | +916565644332| sris@gmail.com       |
 +-----------+----------+---------------+--------+-------+--------+---------------+----------------------+
+
+
+# UC9 Identify addressbook with name and type 
+mysql> alter table addressbook add name varchar(15);
+
+mysql> alter table addressbook add type varchar(15) default 'Family';
+
+mysql> update addressbook set type = 'Self' where lastname = 'King' or firstname
+ = 'Aksh';
+
+mysql> update addressbook set type = 'Personal' where lastname = 'Gupta';
+
+mysql> update addressbook set type = 'Professional' where lastname = 'Zuck';
+
+mysql> select * from addressbook;
++-----------+----------+---------------------+---------------+------------+--------+---------------+------------------------+------+--------------+
+| firstname | lastname | address             | city          | state      | zip| phonenumber   | email                  | name | type         |+-----------+----------+---------------------+---------------+------------+-----
+---+---------------+------------------------+------+--------------+
+| Aksh      | Mehta    |  Silicon City       | Indore        | MP         | 450000 | +18783445654  | aksh@gmail.com         | NULL | Self         |
+| Mark      | King     | F-88 Silicon Valley | Tolouse       | California | 204056 | +143434345655 | markz@rediff.com       | NULL | Self         |
+| Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262  | markz@rediffmail.com   | NULL | Professional |
+| Marsh     | Mellow   | F-98 Silicon Valley | San Francisco | California | 454056 | +187887875654 | marshmellow@rediff.com | NULL | Family       |
+| Rohan     | Bajaj    |  PITH               | Indore        | MP         | 450000 | +91347348734  | moneykicks@gmail.com   | NULL | Family       |
+| Shristi   | Gupta    | B6 Navlakha         | Indore        | MP         | 409020 | +916565644332 | sris@gmail.com         | NULL | Personal     |
+| Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91545544332  | strivi@gmail.com       | NULL | Family       |
++-----------+----------+---------------------+---------------+------------+--------+---------------+------------------------+------+--------------+
