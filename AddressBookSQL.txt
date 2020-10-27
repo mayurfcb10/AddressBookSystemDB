@@ -1,5 +1,7 @@
 # Welcome to the AddressBookSystemDB Problem 
 
+# UC1 Create DataBase AddressBookSystemDB
+
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -31,3 +33,32 @@ mysql> show databases;
 | sys                 |
 | world               |
 +---------------------+
+
+# UC2 Create table addressbook 
+
+mysql> create table addressbook
+    -> ( firstname      varchar(30)     not null,
+    ->   lastname       varchar(30)     not null,
+    ->   address        varchar(150)    not null,
+    ->   city           varchar(30)     not null,
+    ->   state          varchar(30)     not null,
+    ->   zip            varchar(6)      not null,
+    ->   phonenumber    varchar(15)     not null,
+    ->   email          varchar(30)     not null,
+    ->   primary key    (firstname, lastname)
+    -> );
+
+
+mysql> desc addressbook;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstname   | varchar(30)  | NO   | PRI | NULL    |       |
+| lastname    | varchar(30)  | NO   | PRI | NULL    |       |
+| address     | varchar(150) | NO   |     | NULL    |       |
+| city        | varchar(30)  | NO   |     | NULL    |       |
+| state       | varchar(30)  | NO   |     | NULL    |       |
+| zip         | varchar(6)   | NO   |     | NULL    |       |
+| phonenumber | varchar(15)  | NO   |     | NULL    |       |
+| email       | varchar(30)  | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
