@@ -105,3 +105,37 @@ mysql> select * from addressbook;
 | Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262 | markz@rediffmail.com |
 | Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91545544332 | strivi@gmail.com     |
 +-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+
+# UC6 Ability to retrieve contact details by state name or city name 
+
+mysql> select * from addressbook where city = 'Bhopal' or state = 'California';
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| firstname | lastname | address             | city          | state      | zip| phonenumber  | email                |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262 | markz@rediffmail.com |
+| Strivi    | Ahuja    | A-4 Silicon City    | Bhopal        | MP         | 404020 | +91545544332 | strivi@gmail.com     |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+
+
+mysql> select * from addressbook where city = 'San Francisco' ;
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| firstname | lastname | address             | city          | state      | zip | phonenumber  | email                |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262 | markz@rediffmail.com |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+
+mysql> select * from addressbook where  state = 'California';
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| firstname | lastname | address             | city          | state      | zip| phonenumber  | email                |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+| Mark      | Zuck     | F-91 Silicon Valley | San Francisco | California | 204030 | +13462363262 | markz@rediffmail.com |
++-----------+----------+---------------------+---------------+------------+--------+--------------+----------------------+
+
+
+mysql> select * from addressbook where  state = 'MP';
++-----------+----------+------------------+--------+-------+--------+--------------+------------------+
+| firstname | lastname | address          | city   | state | zip    | phonenumber  | email            |
++-----------+----------+------------------+--------+-------+--------+--------------+------------------+
+| Strivi    | Ahuja    | A-4 Silicon City | Bhopal | MP    | 404020 | +915455443
+32 | strivi@gmail.com |
++-----------+----------+------------------+--------+-------+--------+--------------+------------------+
